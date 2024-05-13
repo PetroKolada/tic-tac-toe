@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: unset;
+}
+
+.wrapper {
+    height: 100%;
+    display: flex;
+}
+
+.main {
+    display: flex;
+    margin: auto;
+    height: 100%;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+
+.score {
+    display: flex;
+    gap: 75px;
+}
+
+.score__item {
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    align-items: center;
+}
+
+.score__item>img {
+    width: 50px;
+}
+
+.game {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+}
+
+.moveCell {
+    width: 100px;
+    height: 100px;
+    background-color: aliceblue;
+    border: 1px black solid;
+}
+
+.move__player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.moveCell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.moveCell>img {
+    width: 85px;
+}

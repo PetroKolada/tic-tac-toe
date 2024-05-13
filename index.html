@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tic tac toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="main">
+            <div class="score">
+                <span class="score__item" id="playerOne">
+                    <img src="images/close.png" alt="">
+                    <div class="scoreCurrent" id="playerOneScore">1</div>
+                </span>
+                <span class="score__item" id="playerTwo">
+                    <img src="images/o.png" alt="">
+                    <div class="scoreCurrent" id="playerTwoScore">1</div>
+                </span>
+                <span class="score__item" id="draw">
+                    <img src="images/equal.png" alt="">
+                    <div class="scoreCurrent" id="drawScore">1</div>
+                </span>
+            </div>
+            <div class="game" id="gameScreen">
+                <div class="moveCell"></div>
+                <div class="moveCell"></div>
+                <div class="moveCell"></div>
+                <div class="moveCell"></div>
+                <div class="moveCell"></div>
+                <div class="moveCell"></div>
+                <div class="moveCell"></div>
+                <div class="moveCell"></div>
+                <div class="moveCell"></div>
+            </div>
+            <div class="move" id="playerMove">
+                <span class="move__player">Игрок 1</span>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

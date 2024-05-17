@@ -23,18 +23,34 @@ let gameCells = [
     [null, null, null]
 ]
 
-let gameWinCells = [
-    [1, 1, 1,]
-]
+let gameWinCells =
+    "[0,0,0],[0,0,0],[1,1,1],[0,0,0],[1,1,1],[0,0,0],[0,0,0],[1,0,0],[0,1,0],[0,0,1],[0,0,1],[0,1,0],[1,0,0]"
+
 
 function cellUse(cell, imageId) {
     Array.from(gameScreen.children).map((element, index) => {
         if (element == cell) {
             console.log(gameCells);
             cell.innerHTML = '<img src="images/' + imageIds[imageId] + '">'
-            gameCells[Math.floor(index / 3)][Math.floor(3 / index)] = imageId
+            gameCells[Math.floor(index / 3)][index - (Math.floor(index / 3)) * 3] = imageId
         }
     })
+}
+
+function checkWin(cells, filter) {
+    cells.forEach((element, index) => {
+        element.forEach((elementTwo, indexTwo) => {
+            if (elementTwo != filter) {
+                cells[index][indexTwo] = 0
+            } else {
+                cells[index][indexTwo] = 1
+            }
+        })
+    });
+    let array = JSON.stringify(cells)
+    console.log(gameWinCells.includes(array.slice(1, -1)));
+    console.log(array.slice(1, -1));
+
 }
 
 gameScreen.addEventListener("click", (event) => {
@@ -42,5 +58,7 @@ gameScreen.addEventListener("click", (event) => {
     if (event.target.innerHTML == "") {
         cellUse(event.target, playerTurn)
         playerTurn == 1 ? playerTurn = 0 : playerTurn = 1
+        checkWin(gameCells, 0)
+        checkWin(gameCells, 1)
     }
 })
